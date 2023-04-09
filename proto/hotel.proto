@@ -1,0 +1,44 @@
+syntax = "proto3";
+
+package hotelPackage;
+
+
+service Hotels {
+    rpc getHotels(Location) returns (HotelList){};
+    rpc filterHotels(HotelFilters) returns (HotelList){};
+    rpc getHotelDetails(Hotel) returns (HotelDetails){};
+    rpc saveFavorite(Hotel) returns (HotelDetails){};
+    rpc getFavorite(noParams) returns (HotelList){};
+}
+
+message noParams {
+
+}
+message Location {
+    string location =1;
+}
+
+message HotelDetails {
+    int32 id = 1;
+    string name = 2;
+    string location = 3;
+    string price = 4;
+    int32 rating = 5;
+    string image = 6;
+    string amenities = 7;
+}
+
+message HotelList {
+    repeated HotelDetails hotels = 1;
+};
+
+message Hotel {
+    int32 id = 1;
+};
+
+message HotelFilters {
+    Location location = 1;
+    int32 minPrice = 2;
+    int32 maxPrice = 3;
+    string amenities = 4;
+};
