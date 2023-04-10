@@ -15,3 +15,7 @@ A simple server built using the gRPC protocol to serve local hotels.
 - `cd hotel-listing-backend`
 - `yarn install` or `npm install` depending on personal preference
 - `yarn start` or `npm start` depending on personal preference
+
+## Testing
+
+- `yarn test` or `npm test` depending on personal preference
